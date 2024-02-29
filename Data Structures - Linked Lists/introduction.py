@@ -85,19 +85,75 @@ class LinkedList:
     for i in range(index):
       current = current.next
     return current
-
-
-
+  
+  def set_value(self,index,value):
+    node = self.get(index)
+    if node:
+      node.value = value
+      return True 
+    return False
+  
+  def pop_first(self):
+    if  self.leangth == 0:
+      return 0
     
-
-
-
+    if  self.leangth == 1:
+      self.head = None 
+      self.head = None
+      self.leangth = 0
+      return None
     
+    heade_node = self.head
+    self.head = self.head.next
+    heade_node.next = None
+    self.leangth -=1
+    return None
 
+  def pop(self):
+    if  self.leangth == 0:
+      return 0
       
+    if  self.leangth == 1:
+      self.head = None 
+      self.head = None
+      self.leangth = 0
+      return None
+    
+    temp = self.head
+    while temp.next is not self.tail: # tharget the second last node
+      temp = temp.next
+    temp.next = None
+    self.tail = temp
 
-   
+  def remove(self,index):
+    if index == 0:
+      self.pop_first()
+      return None
+    
+    if index >= self.leangth:
+      return "indexs is not found"
+    
+    if index == self.leangth -1:
+      self.pop()
+      return None
 
+    prev_node = self.get(index-1)
+    remove_node = prev_node.next
+
+    prev_node.next = remove_node.next
+    remove_node.next = None
+    self.leangth -=1
+
+  def removeAll(self):
+    self.head == None
+    self.tail == None
+    self.leangth = 0
+ 
+
+
+
+
+  
 
 new_linkedList = LinkedList()
 print(new_linkedList)
@@ -121,9 +177,39 @@ new_linkedList.prepend(9)
 new_linkedList.prepend(7)
 new_linkedList.insert(8,0)
 print(new_linkedList)
+
 print(new_linkedList.search(18))
 print(new_linkedList.get(0))
 
+print(new_linkedList.set_value(0,800))
+print(new_linkedList)
+
+new_linkedList.pop_first()
+print(new_linkedList)
+
+new_linkedList.pop()
+print(new_linkedList)
+
+new_linkedList.remove(5)
+print(new_linkedList)
+
+new_linkedList.remove(5)
+print(new_linkedList)
+
+new_linkedList.removeAll()
+print(new_linkedList)
+
+new_linkedList.append(000)
+print(new_linkedList)
+
+
+
+
+
+
+
+# new_linkedList.traversal()
+
+
 
  
-# new_linkedList.traversal()
