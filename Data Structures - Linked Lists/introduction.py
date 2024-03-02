@@ -148,6 +148,23 @@ class LinkedList:
     self.head == None
     self.tail == None
     self.leangth = 0
+
+  def from_enf(self,k):
+    temp1 = self.head
+    temp2 =  self.head
+    counter = 0
+
+    while temp1.next is not None:
+      temp1 = temp1.next
+      counter += 1 
+      if counter >= k:
+        temp2 = temp2.next
+    if k-1 > counter:
+      return None
+    return temp2.value ,k ,counter
+
+      
+
  
 
 
@@ -178,29 +195,21 @@ new_linkedList.prepend(7)
 new_linkedList.insert(8,0)
 print(new_linkedList)
 
-print(new_linkedList.search(18))
-print(new_linkedList.get(0))
+print(new_linkedList.from_enf(8))
 
-print(new_linkedList.set_value(0,800))
-print(new_linkedList)
 
-new_linkedList.pop_first()
-print(new_linkedList)
+  
+ 
+ 
+ 
 
-new_linkedList.pop()
-print(new_linkedList)
+ 
 
-new_linkedList.remove(5)
-print(new_linkedList)
+ 
 
-new_linkedList.remove(5)
-print(new_linkedList)
+ 
 
-new_linkedList.removeAll()
-print(new_linkedList)
-
-new_linkedList.append(000)
-print(new_linkedList)
+ 
 
 
 
