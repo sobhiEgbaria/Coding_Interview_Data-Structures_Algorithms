@@ -15,4 +15,10 @@
 // Output: 23
 // Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
-const maxSubArray = (nums) => {};
+const maxSubArray = (nums) => {
+  if (nums.length == 1) {
+    return ` The subarray: [${nums}] has the largest sum ${nums[0]}`;
+  }
+};
+
+console.log(maxSubArray([3]));

@@ -17,3 +17,5 @@
 // rotate 2 steps to the right: [3,99,-1,-100]
 
 var rotate = (nums, k) => {};
+
+console.log(rotate([-1, -100, 3, 99], 2));
